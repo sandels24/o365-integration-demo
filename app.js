@@ -11,7 +11,6 @@ var outlook = require('node-outlook');
 var pages = require('./pages');
 var authHelper = require('./authHelper');
 
-
 // Configure express
 // Set up rendering of static files
 app.use(express.static('static'));
@@ -85,6 +84,13 @@ function addRefToken(req,res,token){
     req.session.refresh_token = token.token.refresh_token;
     res.redirect('/logincomplete');
 }
+
+//outlook.base.setApiEndpoint('https://outlook.office.com/api/v2.0');
+//outlook.base.setAnchorMailbox(request.session.email);
+//outlook.base.setPreferedTimeZone('Eastern Standard Time');
+
+var requestUrl = outlook.base.apiEndpoint() + '/Me/CalenderView'
+
 // Start the server
 app.listen(3000, function() {
     console.log('Example app listening at http://localhost:3000');
