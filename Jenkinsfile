@@ -7,17 +7,16 @@ pipeline {
                 sh 'docker build -t o365-app .'
             }
         }
-        stage('Test') {
+        stage('Tag image') {
             steps {
-                echo 'Testing..'
+                echo 'Tagging..'
+                sh 'docker tag o365-app sandels/0365-app:latest'
             }
         }
         stage('Push to docker hub') {
             steps {
-                sh 'docker login -u sandels -p Saisai123'
-                //docker.withRegistry('https://https://hub.docker.com/r/sandels/o365-app/', 'sandels/Saisai123') {
-                sh 'docker push o365-app'
-                   // }
+                echo 'Pushing....'
+                sh 'docker push sandels/o365-app:latest'
             }
         }
     }
