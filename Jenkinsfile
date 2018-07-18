@@ -12,9 +12,11 @@ pipeline {
                 echo 'Testing..'
             }
         }
-        stage('Deploy') {
+        stage('Push to docker hub') {
             steps {
-                echo 'Deploying....'
+                docker.withRegistry('https://https://hub.docker.com/r/sandels/o365-app/', 'sandels/Saisai123') {
+                        sh 'docker push sandels/o365-app'
+                    }
             }
         }
     }
