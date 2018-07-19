@@ -92,6 +92,6 @@ function addRefToken(req,res,token){
 var requestUrl = outlook.base.apiEndpoint() + '/Me/CalenderView'
 
 // Start the server
-app.listen(8089, function() {
+app.listen(3000, function() {
     console.log('Example app listening at http://localhost:3000');
 });
