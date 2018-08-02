@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                bat 'node app.js'
+                bat 'docker build -t o365-app .'
             }
         }
     }
