@@ -11,7 +11,7 @@ pipeline {
                 echo 'Building..'
                 //bat 'npm install'
                 //bat 'node app.js'
-                bat 'docker build -t o365-app .'
+                sh 'docker build -t o365-app .'
             }
         }
     }
