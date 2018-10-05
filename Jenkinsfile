@@ -10,7 +10,6 @@ pipeline {
             steps {
                 echo 'Building..'
                 bat 'docker version'
-                bat 'docker info'
                 bat 'docker build -t o365-app .'
             }
         }
