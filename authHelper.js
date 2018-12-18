@@ -1,5 +1,5 @@
-const clientId = '1fec376c-3083-4494-96d4-b6e0def223d6';
-const clientSecret = 'crosoLELU154[=hcMQV68=-';
+const clientId = 'UrID';
+const clientSecret = 'urSecret';
 const redirectUri = 'http://192.168.99.100:3000/authorize';
 var auth_code = ''
 const scopes = [
